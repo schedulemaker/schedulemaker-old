@@ -60,15 +60,15 @@ x
 x
 
 ## Personas (1 for each team member)
-1. Lorem Ipsum
+1. Technology capable student
 
-2. Lorem Ipsum
+2. Not-technology capable student
 
-3. Lorem Ipsum
+3. Student with job
 
-4. Lorem Ipsum
+4. Commuter
 
-5. Lorem Ipsum
+5. Multi- campus
 
 ## Updated Project Proposal
 x
