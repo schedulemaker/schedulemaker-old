@@ -58,7 +58,9 @@ x
 For Temple University students who need assistance planning course schedules. ScheduleMaker is a minimal web application that displays multiple scheduling options based on course selections, unlike Temple's current registration system. Our product will produce all possible schedules based on the courses requested, removing the need for students to figure out all their schedule options manually.
 
 ## Feature List
-x
+Searching by the following criteria:
+- Which preferred days of the week (MTWRF) you would like your courses to be on
+- Which campus or campuses you should search for courses on
 
 ## Personas (1 for each team member)
 1. Patrick is a computer science student at Temple's main campus. He loves to find the most efficient use of his time and would like to customize his course schedule as much as possible. Patrick's criteria is the follow: no courses before 10 am, no courses after 5 pm, and if possible only having to be on campus 3 days per week.
