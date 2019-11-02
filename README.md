@@ -28,21 +28,6 @@ I am able to work on any aspect of the project, though I feel I would be most eq
 ## Insights, Feedback and Team Member Expections
 x
 
-### Alexa Delacenserie:
-x
-
-### Chris Bilger:
-x
-
-### Davis Samuel:
-x
-
-### Paul Hutchings:
-x
-
-### Paul Pesnell:
-x
-
 ## Project Documentation Overview
 Below is a list of the programming languages used in this project and a rough outline of where they are being used.
 - AWS for hosting and backend
