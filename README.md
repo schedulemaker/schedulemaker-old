@@ -34,11 +34,12 @@ Below is a list of the programming languages used in this project and a rough ou
 - Bootstrap (v4.3.1) for front-end UI
 - Node.JS (v10.16.3): JavaScript framework as the backend and database for the web application
 - Mocha (v6.2.2) for unit testing
+- AWSCLI (v1.16.272) for interacting with the AWS cloud services through Python (2/3)
+
 ## Development Environment Overview
-x
+Apart from the required programming language versions and the above versions, we will be using Local Stack version 0.10.3. I specific IDE is not requried for this project because all of the work done will be done through Local Stack for AWS testing and through cliet-code scripting languages (HTML, CSS, JS, Python).
 
 ## Vision Statement
-
 For Temple University students who need assistance planning course schedules. ScheduleMaker is a minimal web application that displays multiple scheduling options based on course selections, unlike Temple's current registration system. Our product will produce all possible schedules based on the courses requested, removing the need for students to figure out all their schedule options manually.
 
 ## Feature List
