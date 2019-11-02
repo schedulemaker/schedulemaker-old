@@ -46,10 +46,9 @@ x
 ## Project Documentation Overview
 Below is a list of the programming languages used in this project and a rough outline of where they are being used.
 - AWS for hosting and backend
-- Bootstrap for front-end UI
-- JavaScript: connecting to the backend from the webpage UI, and Node.JS is JavaScript
-- Node.JS: JavaScript framework as the backend and database for the web application
-
+- Bootstrap (v4.3.1) for front-end UI
+- Node.JS (v10.16.3): JavaScript framework as the backend and database for the web application
+- Mocha (v6.2.2) for unit testing
 ## Development Environment Overview
 x
 
@@ -65,11 +64,11 @@ x
 
 2. Megan is a business major at Temple Japan. She is not very 'technologically' savvy and is vitising the Schedule Maker web application for the first time. She also did not plan this well so she only has 1 hour to find a schedule for herself before the deadline approaches. Megan likes very simple, minimal user-interfaces and shies away from any complex technology.
 
-3. Amanda works at Buffalo Wild Wings on the weekends and her manager is persistent in her ability to keep her schedule as open as possible. Amanda lives on campus at Temple's main campus. She does not care how many days she has to work, as long as she is off campus by 4 PM everyday. This is a mandatory requirement for her schedule.
+3. Amanda works at Buffalo Wild Wings on the weekends and her manager is persistent in her ability to keep her schedule as open as possible. Amanda lives on campus at Temple's main campus. She does not care how many days she has to work, as long as she is off campus by 4 PM everyday. This is a manditory requirement for her schedule.
 
-4. Ryan is a Temple University senior and is commuting from Trenton, NJ. His commute time is about an hour so his main scheduling criteria relies on minimizing the amount of individual days that he has to spend commuting. Ryan would prefer to spend 3 longer days on Temple's main campus over 5 shorter days, because of his commute. His only scheduling request is minimizing this criteria.
+4. Ryan is a Temple University senior and is commuting from Trenton, NJ. His commute time is about an hour so his main scheduling criteria relies on minimizing the amount of individual days that he has to spend commuting. Ryan would prefer to spend 3 longer days on Temple's main campus over 5 shorter days, because of the hour commute time each way. His only schedule conflict lies minimizing this criteria.
 
-5. Sam is a 20 year old Temple University sophmore is interested in changing majors and wants to confirm that their new major requirements will fit into a schedule. They live halfway between Temple's main campus and Temple's Ambler campus. If possible, they would like to prioritize the Ambler campus, while still leaving open the option to go into the city for courses that aren't available at the Ambler campus.
+5. Sam is a 20 year old Temple University sophmore is interested in changing majors and wants to con firm that their new major requirements will fit into a schedule. She lives half way between Temple's main campus and Temple's Ambler campus. If possible, she would like to prioritize the Ambler campus, while still leaving open the option to go into the city for courses that aren't available at the Ambler campus.
 
 ## Updated Project Proposal
 x
