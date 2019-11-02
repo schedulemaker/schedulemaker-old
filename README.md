@@ -46,8 +46,12 @@ For Temple University students who need assistance planning course schedules. Sc
 Scheduling by the following criteria:
 - Which preferred days of the week (MTWRF) you would like your courses to be on
 - Which campus or campuses you should search for courses on
-- Start and ending times
+- Start and ending times for courses
 - Professor preference
+- Course prioritization (IE If you have the option for two different courses and only need to take one)
+- Import course-list
+- Export a list of CRN's to copy and paste into the Temple University registration web interface
+- Mobile UI layout vs. Desktop UI layout (mobile-friendly approach to UI)
 
 ## Personas (1 for each team member)
 1. Patrick is a computer science student at Temple's main campus. He loves to find the most efficient use of his time and would like to customize his course schedule as much as possible. Patrick's criteria is the follow: no courses before 10 am, no courses after 5 pm, and if possible only having to be on campus 3 days per week.
