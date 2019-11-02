@@ -26,6 +26,3 @@ I am able to work on any aspect of the project, though I feel I would be most eq
    * Knowledge of front-end web design and databases/cloud services
 - Hardware and software resources required:
   * Server/hosting (consider AWS/cloud)
-
-## Insights, Feedback and Team Member Expections
-x

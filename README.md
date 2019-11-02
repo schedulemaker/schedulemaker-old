@@ -36,3 +36,6 @@ Scheduling by the following criteria:
 4. Ryan is a Temple University senior and is commuting from Trenton, NJ. His commute time is about an hour so his main scheduling criteria relies on minimizing the amount of individual days that he has to spend commuting. Ryan would prefer to spend 3 longer days on Temple's main campus over 5 shorter days, because of the hour commute time each way. His only schedule conflict lies minimizing this criteria.
 
 5. Sam is a 20 year old Temple University sophmore is interested in changing majors and wants to confirm that their new major requirements will fit into a schedule. They live halfway between Temple's main campus and Temple's Ambler campus. If possible, they would like to prioritize the Ambler campus, while still leaving open the option to go into the city for courses that aren't available at the Ambler campus.
+
+## Insights, Feedback and Team Member Expections
+x
