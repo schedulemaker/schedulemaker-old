@@ -46,10 +46,9 @@ x
 ## Project Documentation Overview
 Below is a list of the programming languages used in this project and a rough outline of where they are being used.
 - AWS for hosting and backend
-- Bootstrap for front-end UI
-- JavaScript: connecting to the backend from the webpage UI, and Node.JS is JavaScript
-- Node.JS: JavaScript framework as the backend and database for the web application
-
+- Bootstrap (v4.3.1) for front-end UI
+- Node.JS (v10.16.3): JavaScript framework as the backend and database for the web application
+- Mocha (v6.2.2) for unit testing
 ## Development Environment Overview
 x
 
