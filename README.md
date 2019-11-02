@@ -45,8 +45,8 @@ x
 
 ## Project Documentation Overview
 Below is a list of the programming languages used in this project and a rough outline of where they are being used.
-
-- HTML & CSS: front-end UI
+- AWS for hosting and backend
+- Bootstrap for front-end UI
 - JavaScript: connecting to the backend from the webpage UI, and Node.JS is JavaScript
 - Node.JS: JavaScript framework as the backend and database for the web application
 
@@ -54,7 +54,8 @@ Below is a list of the programming languages used in this project and a rough ou
 x
 
 ## Vision Statement
-x
+
+For Temple University students who need assistance planning course schedules. ScheduleMaker is a minimal web application that displays multiple scheduling options based on course selections, unlike Temple's current registration system. Our product will produce all possible schedules based on the courses requested, removing the need for students to figure out all their schedule options manually.
 
 ## Feature List
 x
