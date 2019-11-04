@@ -11,4 +11,4 @@ services:
       - DEBUG=1
       - DATA_DIR=/tmp/localstack/data
     volumes:
-      - './localstack:/tmp/localstack'
+      - '/tmp/localstack_tmp:/tmp/localstack'
