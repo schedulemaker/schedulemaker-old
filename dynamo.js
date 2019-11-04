@@ -10,10 +10,6 @@ async function createTableTest(dynamodb){
            {
                AttributeName: 'id',
                AttributeType: 'S'
-           },
-           {
-               AttributeName: 'name',
-               AttributeType: 'S'
            }
         ],
         KeySchema: [
@@ -21,10 +17,6 @@ async function createTableTest(dynamodb){
                AttributeName: 'id',
                KeyType: 'HASH'
            },
-           {
-               AttributeName: 'name',
-               KeyType: 'RANGE'
-           }
         ],
         TableName: 'test',
         BillingMode: 'PAY_PER_REQUEST'
@@ -44,7 +36,7 @@ async function createTableTest(dynamodb){
 async function listTableTest(dynamodb){
     try {
         let response = await dynamodb.listTables().promise();
-        console.log(response.data.TableNames);
+        console.log(response.TableNames);
     } catch (error) {
         console.error(error)
     }
@@ -79,13 +71,13 @@ async function readTest(documentClient){
     let params = {
         TableName: 'test',
         Key: {
-            'id': 'foo'
+            id: 'foo'
         }
     };
 
     try {
         let response = await documentClient.get(params).promise();
-        console.log(response.data.Item);
+        console.log(response.Item);
     } catch (error) {
         console.error(error);
     }
