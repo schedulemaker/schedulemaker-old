@@ -1,2 +1,5 @@
 
 localstack/
+node_modules/aws-sdk
+node_modules/mocha
+node_modules/chai
