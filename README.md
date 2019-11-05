@@ -2,28 +2,34 @@
 [Click here for the Updated Project Proposal](https://github.com/3296f19temple/schedulemaker/blob/readme/Proposal.md)
 
 ## Project Documentation Overview
-Below is a list of the programming languages used in this project and a rough outline of where they are being used.
-- AWS for hosting and backend
+Below is a list of the software used in this project and a rough outline of where they are being used.
+- AWS services for hosting and back-end
+   * DynamoDB for holding class data
+   * S3 for web hosting
+   * Lambda for back-end code execution
+   * API gateway for creating application API
 - Bootstrap (v4.3.1) for front-end UI
 - Node.JS (v10.16.3): JavaScript framework as the backend and database for the web application
 - Mocha (v6.2.2) for unit testing
 - AWS-CLI (v1.16.272) for interacting with the AWS cloud services through Python (2/3)
+- Localstack (v0.10.4) for mocking AWS services locally
+- Docker (v19.03) to run Localstack
 
 ## Development Environment Overview
-Apart from the required programming language versions and the above versions, we will be using Local Stack version 0.10.3. A specific IDE is not required for this project because all of the work done will be done through Local Stack for AWS testing and through client-code scripting languages (HTML, CSS, JS, Python).
+The development environment consists of a Linux envrionment with a Docker container running Localstack to mimic AWS services locally and the above-mentioned software frameworks installed. The AWS CLI is used to both interact with Localstack and our production AWS envrionment in the cloud.
 
 ## Vision Statement
 For Temple University students who need assistance planning course schedules. ScheduleMaker is a minimal web application that displays multiple scheduling options based on course selections, unlike Temple's current registration system. Our product will produce all possible schedules based on the courses requested, removing the need for students to figure out all their schedule options manually.
 
 ## Feature List
 Scheduling by the following criteria:
+- Start and ending times for courses
 - Which preferred days of the week (MTWRF) you would like your courses to be on
 - Which campus or campuses you should search for courses on
-- Start and ending times for courses
 - Professor preference
-- Course prioritization (IE If you have the option for two different courses and only need to take one)
-- Import course-list
 - Export a list of CRN's to copy and paste into the Temple University registration web interface
+- Import course-list
+- Course prioritization (IE If you have the option for two different courses and only need to take one)
 - Mobile UI layout vs. Desktop UI layout (mobile-friendly approach to UI)
 
 ## Personas (1 for each team member)
