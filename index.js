@@ -1,14 +1,60 @@
 /**
- * Load the services module if it doesn't exist in the namespace
+ * Load the caching module if it doesn't exist in the namespace
  */
-if (!services){
-    var services = require('./services');
+if (!cache){
+    var cache = require('./cache');
 }
 
 /**
- * This Lambda function creates an S3 bucket, puts a JSON file in it with the values passed to the execution
+ * This Lambda function writes a JSON file to an S3 bucket, reads it, puts the item into the DynamoDB table, and fetches the item from the table.
  */
 exports.handler = async function(event, context){
+    let s3 = cache.S3;
+    let documentclient = cache.DocumentClient;
+    
+    try {
+        /**
+         * Write a JSON file to the S3 bucket
+         */
+        await s3.putObject({
+            Bucket: event.Bucket,
+            Key: event.Filename,
+            Body: JSON.stringify(event.Object)
+        }).promise();
+
+        /**
+         * Read the JSON file from the bucket
+         */
+        let response = await s3.getObject({
+            Bucket: event.Bucket,
+            Key: event.Filename
+        }).promise();
+
+        /**
+         * Put the item into the DynamoDB table
+         */
+        await documentclient.put({
+            TableName: event.Table,
+            Item : response.Body
+        }).promise();
+
+        /**
+         * Query the database for the item
+         */
+        response = documentclient.query({
+                TableName: event.Table,
+                IndexName: event.Index,
+                KeyConditionExpression: 'id = :hkey',
+                ExpressionAttributeValues: {
+                    ':hkey': 'foo'
+                }
+        }).promise();
+
+        return JSON.stringify(response.Data.Items);
+
+    } catch (error) {
+        console.error(error);
+    }
     
 }
 
