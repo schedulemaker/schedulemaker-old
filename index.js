@@ -2,7 +2,7 @@
  * Load the caching module if it doesn't exist in the namespace
  */
 if (!cache){
-    var cache = require('./cache');
+    var cache = require('./cache')();
 }
 
 /**
@@ -35,7 +35,7 @@ exports.handler = async function(event, context){
          */
         await documentclient.put({
             TableName: event.Table,
-            Item : response.Body
+            Item : response.data.Body
         }).promise();
 
         /**
@@ -43,8 +43,7 @@ exports.handler = async function(event, context){
          */
         response = documentclient.query({
                 TableName: event.Table,
-                IndexName: event.Index,
-                KeyConditionExpression: 'id = :hkey',
+                KeyConditionExpression: 'myid = :hkey',
                 ExpressionAttributeValues: {
                     ':hkey': 'foo'
                 }
