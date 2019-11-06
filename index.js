@@ -2,7 +2,7 @@
  * Load the caching module if it doesn't exist in the namespace
  */
 if (!cache){
-    var cache = require('./cache')();
+    var cache = require('./cache')({S3:{endpoint: 'http://localhost:4572'}});
 }
 
 /**
@@ -49,10 +49,10 @@ exports.handler = async function(event, context){
                 }
         }).promise();
 
-        return JSON.stringify(response.Data.Items);
+        return 'success';
 
     } catch (error) {
-        console.error(error);
+        return error;
     }
     
 }
