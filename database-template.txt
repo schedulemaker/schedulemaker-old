@@ -1,7 +1,7 @@
 JSON Structure Template
 
 {
-  "course-name": "<Temple College> <Course Number>",
+  "courseName": "<Temple College> <Course Number>",
     # Primary Key
   "crn": "<Course Registration Number>",
     # Second Primary Key
