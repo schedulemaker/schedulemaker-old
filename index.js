@@ -2,7 +2,7 @@
  * Load the caching module if it doesn't exist in the namespace
  */
 if (!cache){
-    var cache = require('./cache')({S3:{endpoint: 'http://localhost:4572'}});
+    var cache = require('./cache')();
 }
 
 /**
@@ -35,21 +35,21 @@ exports.handler = async function(event, context){
          */
         await documentclient.put({
             TableName: event.Table,
-            Item : response.data.Body
+            Item : JSON.parse(response.Body)
         }).promise();
 
         /**
          * Query the database for the item
          */
-        response = documentclient.query({
+        response = await documentclient.query({
                 TableName: event.Table,
-                KeyConditionExpression: 'myid = :hkey',
+                KeyConditionExpression: 'id = :hkey',
                 ExpressionAttributeValues: {
                     ':hkey': 'foo'
                 }
         }).promise();
 
-        return 'success';
+        return JSON.stringify(response.Items);
 
     } catch (error) {
         return error;
