@@ -1,0 +1,9 @@
+{
+    "Table": "test",
+    "Bucket": "test",
+    "Filename": "test.json",
+    "Object": {
+        "id": "foo",
+        "name": "bar"
+    }
+}
