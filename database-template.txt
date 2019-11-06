@@ -14,9 +14,6 @@ JSON Structure Template
   "section": "<course section number>",
   "title": "<course title>",
   "professor": "<professor name>",
-  "assistants": [
-    # List of teaching assistants
-  ],
   "classTimes": [
     # List of class meeting times
     {
