@@ -1,5 +1,5 @@
 # ScheduleMaker ReadME
-[Click here for the Updated Project Proposal](https://github.com/3296f19temple/schedulemaker/blob/readme/Proposal.md)
+[Click here for the Updated Project Proposal](https://github.com/3296f19temple/schedulemaker/blob/master/Proposal.md)
 
 ## Project Documentation Overview
 Below is a list of the software used in this project and a rough outline of where they are being used.
