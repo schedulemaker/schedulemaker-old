@@ -22,7 +22,8 @@ JSON Structure Template
       "day": "<M | T | W | R | F | Sa | Su>",
       "instructor": "<Prof | TA>",
       "startTime": "<time that the class starts>",
-      "endTime": "<time that the class ends>"
+      "endTime": "<time that the class ends>",
+      "type": "<lab | lect | other>"
     }
   ]
 }
