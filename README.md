@@ -3,7 +3,7 @@
 
 ## Project Documentation Overview
 
-The project board is located [here].(https://trello.com/b/wwvFk4F7/schedule-maker)
+The project board is located [here](https://trello.com/b/wwvFk4F7/schedule-maker).
 
 Below is a list of the software used in this project and a rough outline of where they are being used.
 - AWS services for hosting and back-end
