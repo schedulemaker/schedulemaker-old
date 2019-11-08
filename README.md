@@ -2,6 +2,9 @@
 [Click here for the Updated Project Proposal](https://github.com/3296f19temple/schedulemaker/blob/master/Proposal.md)
 
 ## Project Documentation Overview
+
+The project board is located [here](https://trello.com/b/wwvFk4F7/schedule-maker).
+
 Below is a list of the software used in this project and a rough outline of where they are being used.
 - AWS services for hosting and back-end
    * DynamoDB for holding class data
