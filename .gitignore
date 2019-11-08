@@ -1,4 +1,7 @@
-node_modules/
+node_modules/aws-sdk
+node_modules/chai
+node_modules/mocha
+node_modules/.bin
 .vscode/
 *.zip
 out.json
