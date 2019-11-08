@@ -4,5 +4,4 @@ node_modules/mocha
 node_modules/.bin
 .vscode/
 *.zip
-out.json
-test.js
+hello-world/out.json
