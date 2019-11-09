@@ -5,3 +5,5 @@ node_modules/.bin
 .vscode/
 *.zip
 hello-world/out.json
+test.js
+test.json
