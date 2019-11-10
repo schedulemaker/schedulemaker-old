@@ -34,7 +34,8 @@ describe('Banner', function() {
       });
 
       it('Should return a non-empty array', async function(){
-        assert.notDeepEqual(await banner.getTerms(), []);
+        let terms = await banner.getTerms(); 
+        assert(terms.length > 0);
       });
     });
 
