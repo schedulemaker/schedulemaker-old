@@ -1,0 +1,107 @@
+
+[
+  {
+    "code": "GW",
+    "description": "GenEd Analyt Reading/Writing"
+  },
+  {
+    "code": "GA",
+    "description": "GenEd Arts"
+  },
+  {
+    "code": "GG",
+    "description": "GenEd Global/World Society"
+  },
+  {
+    "code": "GB",
+    "description": "GenEd Human Behavior"
+  },
+  {
+    "code": "GY",
+    "description": "GenEd Intellectual Heritage I"
+  },
+  {
+    "code": "GZ",
+    "description": "GenEd Intellectual Heritage II"
+  },
+  {
+    "code": "GQ",
+    "description": "GenEd Quantitative Literacy"
+  },
+  {
+    "code": "GD",
+    "description": "GenEd Race &amp; Diversity"
+  },
+  {
+    "code": "GS",
+    "description": "GenEd Science &amp; Technology"
+  },
+  {
+    "code": "GU",
+    "description": "GenEd US Society"
+  },
+  {
+    "code": "HO",
+    "description": "Honors"
+  },
+  {
+    "code": "LA",
+    "description": "Language A"
+  },
+  {
+    "code": "LB",
+    "description": "Language B"
+  },
+  {
+    "code": "LC",
+    "description": "Language C"
+  },
+  {
+    "code": "WI",
+    "description": "Writing Intensive"
+  },
+  {
+    "code": "XC",
+    "description": "_Core Am Cult/St Race/Writing"
+  },
+  {
+    "code": "AC",
+    "description": "_Core American Culture"
+  },
+  {
+    "code": "AR",
+    "description": "_Core Arts"
+  },
+  {
+    "code": "IN",
+    "description": "_Core Individual and Society"
+  },
+  {
+    "code": "IS",
+    "description": "_Core International Studies"
+  },
+  {
+    "code": "QA",
+    "description": "_Core Quantitative Reasoning A"
+  },
+  {
+    "code": "QB",
+    "description": "_Core Quantitative Reasoning B"
+  },
+  {
+    "code": "RS",
+    "description": "_Core Race"
+  },
+  {
+    "code": "RN",
+    "description": "_Core Race/Individual Society"
+  },
+  {
+    "code": "SA",
+    "description": "_Core Science &amp; Technology A"
+  },
+  {
+    "code": "SB",
+    "description": "_Core Science &amp; Technology B"
+  }
+]
