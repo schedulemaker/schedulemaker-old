@@ -1,0 +1,723 @@
+
+[
+  {
+    "code": "AS",
+    "description": "Actuarial Science"
+  },
+  {
+    "code": "AOD",
+    "description": "Adult &amp; Organizational Develop"
+  },
+  {
+    "code": "ACMS",
+    "description": "Advanced Core Medical Science"
+  },
+  {
+    "code": "ADV",
+    "description": "Advertising"
+  },
+  {
+    "code": "AIRF",
+    "description": "Aerospace Studies - AF ROTC"
+  },
+  {
+    "code": "AAAS",
+    "description": "Africology + African Amer St"
+  },
+  {
+    "code": "AMST",
+    "description": "American Studies"
+  },
+  {
+    "code": "ANTH",
+    "description": "Anthropology"
+  },
+  {
+    "code": "ABA",
+    "description": "Applied Behavior Analysis"
+  },
+  {
+    "code": "ARBC",
+    "description": "Arabic"
+  },
+  {
+    "code": "ARCH",
+    "description": "Architecture"
+  },
+  {
+    "code": "ART",
+    "description": "Art"
+  },
+  {
+    "code": "ARTU",
+    "description": "Art (Japan Campus)"
+  },
+  {
+    "code": "ARTE",
+    "description": "Art Education"
+  },
+  {
+    "code": "ARTH",
+    "description": "Art History"
+  },
+  {
+    "code": "ARTT",
+    "description": "Art Therapy"
+  },
+  {
+    "code": "ASST",
+    "description": "Asian Studies"
+  },
+  {
+    "code": "BIOE",
+    "description": "Bioengineering"
+  },
+  {
+    "code": "BIOL",
+    "description": "Biology"
+  },
+  {
+    "code": "BMSC",
+    "description": "Biomedical Sciences (Medical)"
+  },
+  {
+    "code": "BOT",
+    "description": "Botany"
+  },
+  {
+    "code": "BCMD",
+    "description": "Boyer College of Music &amp; Dance"
+  },
+  {
+    "code": "BA",
+    "description": "Business Administration"
+  },
+  {
+    "code": "CTE",
+    "description": "Career and Technical Education"
+  },
+  {
+    "code": "CHEM",
+    "description": "Chemistry"
+  },
+  {
+    "code": "CHI",
+    "description": "Chinese"
+  },
+  {
+    "code": "CTRP",
+    "description": "City and Regional Planning"
+  },
+  {
+    "code": "CEE",
+    "description": "Civil Engineering"
+  },
+  {
+    "code": "CSHI",
+    "description": "Clinical Sci/Hlth Informatics"
+  },
+  {
+    "code": "CLA",
+    "description": "College of Liberal Arts"
+  },
+  {
+    "code": "SCTC",
+    "description": "College of Science and Tech"
+  },
+  {
+    "code": "CMGT",
+    "description": "Communication Management"
+  },
+  {
+    "code": "CSCD",
+    "description": "Communication Sciences and Dis"
+  },
+  {
+    "code": "CSI",
+    "description": "Communication Social Influence"
+  },
+  {
+    "code": "CMST",
+    "description": "Communication Studies"
+  },
+  {
+    "code": "COMM",
+    "description": "Communications and Theater"
+  },
+  {
+    "code": "CART",
+    "description": "Community Arts"
+  },
+  {
+    "code": "CDEV",
+    "description": "Community Development"
+  },
+  {
+    "code": "CIS",
+    "description": "Computer &amp; Information Science"
+  },
+  {
+    "code": "CMT",
+    "description": "Construction Management Tech"
+  },
+  {
+    "code": "CPSY",
+    "description": "Counseling Psychology"
+  },
+  {
+    "code": "CRFT",
+    "description": "Crafts"
+  },
+  {
+    "code": "CJ",
+    "description": "Criminal Justice"
+  },
+  {
+    "code": "DANC",
+    "description": "Dance"
+  },
+  {
+    "code": "DSST",
+    "description": "Disability Studies"
+  },
+  {
+    "code": "ECED",
+    "description": "Early Childhood Education"
+  },
+  {
+    "code": "EES",
+    "description": "Earth &amp; Environmental Science"
+  },
+  {
+    "code": "ECON",
+    "description": "Economics"
+  },
+  {
+    "code": "EDUC",
+    "description": "Education"
+  },
+  {
+    "code": "EDAD",
+    "description": "Educational Administration"
+  },
+  {
+    "code": "EPSY",
+    "description": "Educational Psychology"
+  },
+  {
+    "code": "ECE",
+    "description": "Electrical Engineering"
+  },
+  {
+    "code": "ENGR",
+    "description": "Engineering"
+  },
+  {
+    "code": "EMGT",
+    "description": "Engineering Management"
+  },
+  {
+    "code": "ENGT",
+    "description": "Engineering Technology"
+  },
+  {
+    "code": "ENG",
+    "description": "English"
+  },
+  {
+    "code": "ENES",
+    "description": "English Education (Secondary)"
+  },
+  {
+    "code": "ENVT",
+    "description": "Environmental Engineering Tech"
+  },
+  {
+    "code": "ENVH",
+    "description": "Environmental Health"
+  },
+  {
+    "code": "ENVS",
+    "description": "Environmental Science (CST)"
+  },
+  {
+    "code": "ENST",
+    "description": "Environmental Studies (CLA)"
+  },
+  {
+    "code": "EPBI",
+    "description": "Epidemiology and Biostatistics"
+  },
+  {
+    "code": "FMA",
+    "description": "Film and Media Arts"
+  },
+  {
+    "code": "FIN",
+    "description": "Finance"
+  },
+  {
+    "code": "FLED",
+    "description": "Foreign Language Ed-Secondary"
+  },
+  {
+    "code": "FDPR",
+    "description": "Foundation Program"
+  },
+  {
+    "code": "FREN",
+    "description": "French"
+  },
+  {
+    "code": "GSWS",
+    "description": "Gender/Sexuality/Women&#39;s St"
+  },
+  {
+    "code": "GUS",
+    "description": "Geography and Urban Studies"
+  },
+  {
+    "code": "GER",
+    "description": "German"
+  },
+  {
+    "code": "GBST",
+    "description": "Global Studies"
+  },
+  {
+    "code": "GDC",
+    "description": "Globalization Development Comm"
+  },
+  {
+    "code": "GAD",
+    "description": "Graphic Arts and Design"
+  },
+  {
+    "code": "GRKA",
+    "description": "Greek (Ancient)"
+  },
+  {
+    "code": "GRC",
+    "description": "Greek and Roman Classics"
+  },
+  {
+    "code": "HIM",
+    "description": "Health Information Management"
+  },
+  {
+    "code": "HPM",
+    "description": "Health Policy and Management"
+  },
+  {
+    "code": "HRPR",
+    "description": "Health Related Professions"
+  },
+  {
+    "code": "HCM",
+    "description": "Healthcare Management"
+  },
+  {
+    "code": "HEBR",
+    "description": "Hebrew"
+  },
+  {
+    "code": "HIED",
+    "description": "Higher Education"
+  },
+  {
+    "code": "HIN",
+    "description": "Hindi"
+  },
+  {
+    "code": "HIST",
+    "description": "History"
+  },
+  {
+    "code": "HORT",
+    "description": "Horticulture"
+  },
+  {
+    "code": "HDCE",
+    "description": "Human Develop Commnty Engagemn"
+  },
+  {
+    "code": "HRM",
+    "description": "Human Resource Management"
+  },
+  {
+    "code": "HS",
+    "description": "Human Services"
+  },
+  {
+    "code": "ISE",
+    "description": "Industrial/Systems Engineering"
+  },
+  {
+    "code": "IH",
+    "description": "Intellectual Heritage"
+  },
+  {
+    "code": "IB",
+    "description": "International Business Admn"
+  },
+  {
+    "code": "ITAL",
+    "description": "Italian"
+  },
+  {
+    "code": "JPNS",
+    "description": "Japanese"
+  },
+  {
+    "code": "JST",
+    "description": "Jewish Studies"
+  },
+  {
+    "code": "JRN",
+    "description": "Journalism"
+  },
+  {
+    "code": "JUDO",
+    "description": "Juris Doctor"
+  },
+  {
+    "code": "KINS",
+    "description": "Kinesiology"
+  },
+  {
+    "code": "KLN",
+    "description": "Klein College Media Comm"
+  },
+  {
+    "code": "KRN",
+    "description": "Korean"
+  },
+  {
+    "code": "LARC",
+    "description": "Landscape Architecture"
+  },
+  {
+    "code": "LAT",
+    "description": "Latin"
+  },
+  {
+    "code": "LAS",
+    "description": "Latin American Studies"
+  },
+  {
+    "code": "LAWU",
+    "description": "Law - Undergraduate Courses"
+  },
+  {
+    "code": "LGLS",
+    "description": "Legal Studies"
+  },
+  {
+    "code": "LGBT",
+    "description": "Lesbian Gay Bi Trans Gender St"
+  },
+  {
+    "code": "MIS",
+    "description": "Management Information Systems"
+  },
+  {
+    "code": "MSOM",
+    "description": "Management Science/Op Mgmnt"
+  },
+  {
+    "code": "MKTG",
+    "description": "Marketing"
+  },
+  {
+    "code": "MLA",
+    "description": "Master of Liberal Arts"
+  },
+  {
+    "code": "MAES",
+    "description": "Math Education (Secondary)"
+  },
+  {
+    "code": "MATH",
+    "description": "Mathematics"
+  },
+  {
+    "code": "MEE",
+    "description": "Mechanical Engineering"
+  },
+  {
+    "code": "MSP",
+    "description": "Media Studies &amp; Production"
+  },
+  {
+    "code": "MMC",
+    "description": "Media and Communication"
+  },
+  {
+    "code": "MGRE",
+    "description": "Middle Grades Education"
+  },
+  {
+    "code": "MLSC",
+    "description": "Military Science"
+  },
+  {
+    "code": "MUSC",
+    "description": "Music"
+  },
+  {
+    "code": "MUED",
+    "description": "Music Education"
+  },
+  {
+    "code": "MUST",
+    "description": "Music Studies"
+  },
+  {
+    "code": "NAVS",
+    "description": "Naval Science - Navy ROTC"
+  },
+  {
+    "code": "NMS",
+    "description": "Neuromotor Science"
+  },
+  {
+    "code": "NSCI",
+    "description": "Neuroscience - CLA"
+  },
+  {
+    "code": "NURS",
+    "description": "Nursing"
+  },
+  {
+    "code": "OTHR",
+    "description": "Occupational Therapy"
+  },
+  {
+    "code": "ORBG",
+    "description": "Oral Biology"
+  },
+  {
+    "code": "PHTE",
+    "description": "PHETE"
+  },
+  {
+    "code": "PDS",
+    "description": "Painting, Drawing &amp; Sculpture"
+  },
+  {
+    "code": "PATH",
+    "description": "Pathology &amp; Lab Medicine"
+  },
+  {
+    "code": "PS",
+    "description": "Pharmaceutical Sciences"
+  },
+  {
+    "code": "PP",
+    "description": "Pharmacy Practice"
+  },
+  {
+    "code": "QARA",
+    "description": "Pharmacy Quality Assurance"
+  },
+  {
+    "code": "PHIL",
+    "description": "Philosophy"
+  },
+  {
+    "code": "PHOT",
+    "description": "Photography"
+  },
+  {
+    "code": "PHTH",
+    "description": "Physical Therapy"
+  },
+  {
+    "code": "PA",
+    "description": "Physician Assistant"
+  },
+  {
+    "code": "PHYS",
+    "description": "Physics"
+  },
+  {
+    "code": "POLS",
+    "description": "Political Science"
+  },
+  {
+    "code": "PORT",
+    "description": "Portuguese"
+  },
+  {
+    "code": "PRAN",
+    "description": "ProRanger Program"
+  },
+  {
+    "code": "PSY",
+    "description": "Psychology"
+  },
+  {
+    "code": "PLCY",
+    "description": "Public Policy"
+  },
+  {
+    "code": "PR",
+    "description": "Public Relations"
+  },
+  {
+    "code": "RE",
+    "description": "Real Estate"
+  },
+  {
+    "code": "RCTH",
+    "description": "Recreational Therapy"
+  },
+  {
+    "code": "REL",
+    "description": "Religion"
+  },
+  {
+    "code": "RMI",
+    "description": "Risk Management and Insurance"
+  },
+  {
+    "code": "RUS",
+    "description": "Russian"
+  },
+  {
+    "code": "SPSY",
+    "description": "School Psychology"
+  },
+  {
+    "code": "STHA",
+    "description": "School Sport Tourism Hosp Mgt"
+  },
+  {
+    "code": "SBM",
+    "description": "School of Business and Mgmnt"
+  },
+  {
+    "code": "DENT",
+    "description": "School of Dentistry"
+  },
+  {
+    "code": "MEDS",
+    "description": "School of Medicine"
+  },
+  {
+    "code": "SCES",
+    "description": "Science Education (Secondary)"
+  },
+  {
+    "code": "SCLP",
+    "description": "Sculpture"
+  },
+  {
+    "code": "SECE",
+    "description": "Secondary Education"
+  },
+  {
+    "code": "SBS",
+    "description": "Social &amp; Behavioral Sciences"
+  },
+  {
+    "code": "SSES",
+    "description": "Social Studies Ed (Secondary)"
+  },
+  {
+    "code": "SSWG",
+    "description": "Social Work - Graduate"
+  },
+  {
+    "code": "SSWU",
+    "description": "Social Work - Undergraduate"
+  },
+  {
+    "code": "SOC",
+    "description": "Sociology"
+  },
+  {
+    "code": "SPAN",
+    "description": "Spanish"
+  },
+  {
+    "code": "SPED",
+    "description": "Special Education"
+  },
+  {
+    "code": "SRM",
+    "description": "Sport + Recreation Management"
+  },
+  {
+    "code": "STHM",
+    "description": "Sport Tourism Hospitality Mgt"
+  },
+  {
+    "code": "STAT",
+    "description": "Statistics"
+  },
+  {
+    "code": "SGM",
+    "description": "Strategic Management"
+  },
+  {
+    "code": "STAW",
+    "description": "Study Away Non-TU Program"
+  },
+  {
+    "code": "SCM",
+    "description": "Supply Chain Management"
+  },
+  {
+    "code": "JIBS",
+    "description": "TUJ International Bus Studies"
+  },
+  {
+    "code": "TESL",
+    "description": "Teaching English to Speakers"
+  },
+  {
+    "code": "TUJ",
+    "description": "Temple University Japan"
+  },
+  {
+    "code": "THTR",
+    "description": "Theater"
+  },
+  {
+    "code": "TFMA",
+    "description": "Theater, Film and Media Arts"
+  },
+  {
+    "code": "THRC",
+    "description": "Therapeutic Recreation"
+  },
+  {
+    "code": "TS",
+    "description": "Topical Studies"
+  },
+  {
+    "code": "THM",
+    "description": "Tourism Hospitality Management"
+  },
+  {
+    "code": "TYLE",
+    "description": "Tyler School Art Architecture"
+  },
+  {
+    "code": "UNVS",
+    "description": "University Seminar"
+  },
+  {
+    "code": "UBTH",
+    "description": "Urban Bioethics"
+  },
+  {
+    "code": "URBE",
+    "description": "Urban Education"
+  },
+  {
+    "code": "VS",
+    "description": "Visual Studies"
+  }
+]

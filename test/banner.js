@@ -126,6 +126,7 @@ describe('Banner', async function () {
    * GETINSTRUCTORS()
    */
   describe('#getInstructors()', function () {
+    this.timeout(30000);
     it('Should not throw an error', async function () {
       assert.doesNotReject(banner.getInstructors());
     });
