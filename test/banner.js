@@ -11,7 +11,7 @@ describe('Banner', async function () {
    * BUILD()
    */
   describe('#build(term)', function () {
-    it('Should throw an error when a term is not passed', async function () {
+    it('Should throw an error when a term is not passed', function () {
       assert.rejects(async () => new Banner().build, Error, 'Must provide term to complete object construction');
     });
   });
@@ -28,7 +28,7 @@ describe('Banner', async function () {
   });
 
   /**
-   * METHODS
+   * SETUP
    */
   var banner = await new Banner().build(term);
 
@@ -137,6 +137,19 @@ describe('Banner', async function () {
     it('Should return a non-empty array', async function () {
       let terms = await banner.getInstructors();
       assert(terms.length > 0);
+    });
+  });
+
+  /**
+   * CLASS_SEARCH()
+   */
+  describe('#classSearch(subjects)', function () {
+    it('Should throw an error when a subject is not passed', function () {
+      assert.rejects(async () => banner.classSearch, Error, 'Must provide subject(s)');
+    });
+
+    it('Should not return NULL', async function(){
+      assert(await banner.classSearch('CIS'));
     });
   });
 });
