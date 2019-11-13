@@ -1,0 +1,40 @@
+.shadow {
+    box-shadow: 3px 3px 1px #444;
+    transition:box-shadow 0.1s linear;
+}
+
+.schedule {
+    background-color: #EEE;
+}
+
+.scheduleRow {
+    height: 60px;
+    border-bottom: solid 1px #DDD;
+    position: relative;
+}
+
+.scheduleNum {
+    width: 2ex;
+    text-align: right;
+    position: absolute;
+    left: -20px;
+    top: -13px;
+}
+
+.scheduleColumn {
+	height: 90%;
+	position: relative;
+	z-index: 500;
+	float: left;
+	width: 20%;
+	margin-top: -30px;
+}
+
+.scheduleClassTime {
+    position: relative;
+    border-radius: 10px;
+}
+
+.scheduleClassTime p {
+    font-size: 12px;
+}
