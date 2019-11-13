@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/schedule.css">
+
+        <title>ScheduleMaker</title>
+    </head>
+    <body>
+        <div id="sidebar" class="drop-shadow">
+            <h1 class="text-center">Sidebar goes here.</h1>
+        </div>
+        <div id="sidebar-collapse">
+            <i class="fa fa-chevron-right"></i>
+        </div>
+        <div id="sidebar-bg">
+
+        </div>
+        <div id="content">
+            <div id="scheduleDiv" class="schedule">
+
+            </div>
+        </div>
+        <div id="classModal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js'></script>
+        <script src="clientScripts/time.js"></script>
+        <script src="clientScripts/schedule.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({
+                    theme: "minimal"
+                });
+
+                // Toggle sidebar events.
+                $('#sidebar-collapse').on('click', toggleSidebar);
+                $('#sidebar-bg').on('click', toggleSidebar);
+
+                Schedule.init();
+            
+                $.getJSON('schedule.json', function(data) {
+                    sessionStorage.setItem('schedules', JSON.stringify(data.schedules));
+                    Schedule.setSchedule('#scheduleDiv', data.schedules[0]);
+                });
+            });
+
+            function toggleSidebar() {
+                // open or close navbar
+                $('#sidebar, #sidebar-collapse, #sidebar-bg, #content').toggleClass('active');
+                // close dropdowns
+                $('.collapse.in').toggleClass('in');
+                // and also adjust aria-expanded attributes we use for the open/closed arrows
+                // in our CSS
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            }
+        </script>
+    </body>
+</html>
