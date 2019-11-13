@@ -1,0 +1,147 @@
+
+[
+  {
+    "code": "AMB",
+    "description": "Ambler"
+  },
+  {
+    "code": "XLC",
+    "description": "Bucks CC at Log College"
+  },
+  {
+    "code": "CC",
+    "description": "Center City"
+  },
+  {
+    "code": "XCJ",
+    "description": "Central High School"
+  },
+  {
+    "code": "XDC",
+    "description": "Delaware County Community Coll"
+  },
+  {
+    "code": "XDE",
+    "description": "Desmond Conference Center"
+  },
+  {
+    "code": "FTW",
+    "description": "Fort Washington"
+  },
+  {
+    "code": "HAR",
+    "description": "Harrisburg"
+  },
+  {
+    "code": "HSC",
+    "description": "Health Sciences"
+  },
+  {
+    "code": "JPN",
+    "description": "Japan"
+  },
+  {
+    "code": "XLE",
+    "description": "Lehigh Carbon Comm College"
+  },
+  {
+    "code": "MN",
+    "description": "Main"
+  },
+  {
+    "code": "XMC",
+    "description": "Montgomery Co Community Col"
+  },
+  {
+    "code": "XNS",
+    "description": "Neshaminey School District"
+  },
+  {
+    "code": "XNC",
+    "description": "Northampton Community Coll"
+  },
+  {
+    "code": "XNB",
+    "description": "Northeast High School"
+  },
+  {
+    "code": "OFF",
+    "description": "Off Campus Sites"
+  },
+  {
+    "code": "ONL",
+    "description": "Online Learning"
+  },
+  {
+    "code": "XZZ",
+    "description": "Out Of The Area"
+  },
+  {
+    "code": "XQQ",
+    "description": "QA/RA - Amgen"
+  },
+  {
+    "code": "XQD",
+    "description": "QA/RA AstraZeneca, Delaware"
+  },
+  {
+    "code": "XQ5",
+    "description": "QA/RA Pharmacy - California"
+  },
+  {
+    "code": "XQC",
+    "description": "QA/RA Pharmacy - Connecticut"
+  },
+  {
+    "code": "XQB",
+    "description": "QA/RA Pharmacy - Massachusetts"
+  },
+  {
+    "code": "XQM",
+    "description": "QA/RA Pharmacy - Michigan"
+  },
+  {
+    "code": "XQS",
+    "description": "QA/RA Pharmacy - Missouri"
+  },
+  {
+    "code": "XQY",
+    "description": "QA/RA Pharmacy - New York"
+  },
+  {
+    "code": "XQO",
+    "description": "QA/RA Pharmacy - Ohio"
+  },
+  {
+    "code": "XQZ",
+    "description": "QA/RA Pharmacy - Other"
+  },
+  {
+    "code": "XQV",
+    "description": "QA/RA Pharmacy - Virginia"
+  },
+  {
+    "code": "XQ7",
+    "description": "QA/RA Pharmacy &ndash; Frazer, PA"
+  },
+  {
+    "code": "XQ6",
+    "description": "QA/RA Sanofi-Pasteur"
+  },
+  {
+    "code": "XRI",
+    "description": "Ridley School District"
+  },
+  {
+    "code": "ROM",
+    "description": "Rome"
+  },
+  {
+    "code": "XSJ",
+    "description": "St. Joseph&#39;s Univ AF ROTC"
+  },
+  {
+    "code": "XPN",
+    "description": "Univ Pennsylvania Naval ROTC"
+  }
+]
