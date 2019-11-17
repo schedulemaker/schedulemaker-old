@@ -1,0 +1,74 @@
+[
+    {
+        "code": "TA",
+        "description": "Art Architecture, Tyler School"
+    },
+    {
+        "code": "BU",
+        "description": "Business and Mngmnt, Fox School"
+    },
+    {
+        "code": "CN",
+        "description": "Center for Continuing Educ H"
+    },
+    {
+        "code": "HP",
+        "description": "College of Public Health"
+    },
+    {
+        "code": "DN",
+        "description": "Dentistry, Kornberg School"
+    },
+    {
+        "code": "ED",
+        "description": "Education"
+    },
+    {
+        "code": "EN",
+        "description": "Engineering"
+    },
+    {
+        "code": "EV",
+        "description": "Environmental Design H"
+    },
+    {
+        "code": "LW",
+        "description": "Law, Beasley School"
+    },
+    {
+        "code": "LA",
+        "description": "Liberal Arts"
+    },
+    {
+        "code": "CO",
+        "description": "Media and Comm, Klein College"
+    },
+    {
+        "code": "ME",
+        "description": "Medicine, Lewis Katz School"
+    },
+    {
+        "code": "BC",
+        "description": "Music and Dance, Boyer College"
+    },
+    {
+        "code": "PH",
+        "description": "Pharmacy"
+    },
+    {
+        "code": "ST",
+        "description": "Science and Technology"
+    },
+    {
+        "code": "SW",
+        "description": "Social Work"
+    },
+    {
+        "code": "TH",
+        "description": "Sport Tourism Hospitality Mgt"
+    },
+    {
+        "code": "CA",
+        "description": "Theater, Film and Media Arts"
+    }
+]
