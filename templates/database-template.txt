@@ -1,0 +1,29 @@
+JSON Structure Template
+
+{
+  "courseName": "<Temple College> <Course Number>",
+    # Primary Key
+  "crn": "<Course Registration Number>",
+    # Second Primary Key
+  "campus": "<MN | JP | CC | AM | HB | PM | HS | RM>",
+  "isOpen": "<true | false>",
+  "currentSeats": "<# of seats currently taken>",
+  "totalSeats": "<# of total available seats>",
+  "currentWaitlist": "<# of seats taken in the waitlist>",
+  "totalWaitlist": "<# of total available seats in the waitlist>",
+  "section": "<course section number>",
+  "title": "<course title>",
+  "professor": "<professor name>",
+  "classTimes": [
+    # List of class meeting times
+    {
+      "building": "<building name>",
+      "roomNumber": "<room number for the meeting time>",
+      "day": "<M | T | W | R | F | Sa | Su>",
+      "instructor": "<Prof | TA>",
+      "startTime": "<time that the class starts>",
+      "endTime": "<time that the class ends>",
+      "type": "<lab | lect | other>"
+    }
+  ]
+}

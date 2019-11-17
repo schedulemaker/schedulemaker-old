@@ -1,0 +1,27 @@
+{
+  "campus": "MN",
+  "classTimes": [
+    {
+      "building": "Tuttleman Learning Center",
+      "days": "MWF",
+      "endTime": 1050,
+      "instructor": "TA",
+      "location": "Tuttleman Learning Center 00101",
+      "startTime": 1000
+    }
+  ],
+  "crn": 30319,
+  "days": "MWF",
+  "isOpen": true,
+  "locations": [
+    "Tuttleman Learning Center"
+  ],
+  "maxTime": 1050,
+  "minTime": 1000,
+  "name": "ADV 2111",
+  "profs": [
+    "TA"
+  ],
+  "section": "001",
+  "title": "Introduction to Marketing"
+}

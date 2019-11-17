@@ -1,7 +1,7 @@
-node_modules/aws-sdk
-node_modules/chai
-node_modules/mocha
-node_modules/.bin
+lambda/node_modules/aws-sdk
+lambda/node_modules/chai
+lambda/node_modules/mocha
+lambda/node_modules/.bin
 .vscode/
 *.zip
 hello-world/out.json

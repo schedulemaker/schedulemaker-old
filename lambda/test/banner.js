@@ -126,7 +126,7 @@ describe('Banner', async function () {
    * GETINSTRUCTORS()
    */
   describe('#getInstructors()', function () {
-    this.timeout(30000);
+    this.timeout(15000);
     it('Should not throw an error', async function () {
       assert.doesNotReject(banner.getInstructors());
     });
@@ -145,8 +145,9 @@ describe('Banner', async function () {
    * CLASS_SEARCH()
    */
   describe('#classSearch(subjects)', function () {
+    this.timeout(10000);
     it('Should throw an error when a subject is not passed', function () {
-      assert.rejects(async () => banner.classSearch, Error, 'Must provide subject(s)');
+      assert.rejects(async () => banner.classSearch, Error, 'Must provide subject');
     });
 
     it('Should not return NULL', async function(){
