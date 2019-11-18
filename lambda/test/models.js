@@ -12,7 +12,7 @@ describe('models', function() {
             testData = JSON.parse(await readFile('./test/models.json'));
         });
        
-        it('Should match the database format', function() {
+        it('Should match the database format and not throw errors', function() {
             testData.forEach(example => asssert.deepEqual(models.BannerToDB.convert([example.input]), [example.output]));
         });
     });
