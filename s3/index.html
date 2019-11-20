@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles/style.css">
@@ -14,8 +15,12 @@
         <title>ScheduleMaker</title>
     </head>
     <body>
-        <div id="sidebar" class="drop-shadow">
-            <h1 class="text-center">Sidebar goes here.</h1>
+        <div id="sidebar" class="shadow">
+            <h1>ScheduleMaker</h1>
+            <div id="schedule-list" class="shadow">
+
+            </div>
+            <button id="select-classes-button" type="button" class="btn btn-light">Select Classes</button>
         </div>
         <div id="sidebar-collapse">
             <i class="fa fa-chevron-right"></i>
@@ -24,7 +29,22 @@
 
         </div>
         <div id="content">
-            <div id="scheduleDiv" class="schedule">
+            <div id="schedule-div" class="schedule">
+
+            </div>
+            <div id="form-div">
+                <h2>Class Selection</h2>
+                <hr>
+                <form class="pull-left">
+                    <input id="course-search" type="text" class="search-query" placeholder="Search">
+                    <br>
+                    <br>
+                    <div id="course-chips">
+                        &nbsp;
+                    </div>
+                    <br>
+                    <button id="create-schedules-button" type="button" class="btn btn-cherry">Create Schedules</button>
+                </form>
 
             </div>
         </div>
@@ -47,31 +67,85 @@
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <script
+            src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+            integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+            crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js'></script>
+        <script src="clientScripts/api.js"></script>
+        <script src="clientScripts/form.js"></script>
         <script src="clientScripts/time.js"></script>
         <script src="clientScripts/schedule.js"></script>
         <script>
             $(document).ready(function () {
-                $("#sidebar").mCustomScrollbar({
-                    theme: "minimal"
-                });
+                $('#schedule-div').hide();
+                $('#select-classes-button').hide();
 
                 // Toggle sidebar events.
                 $('#sidebar-collapse').on('click', toggleSidebar);
                 $('#sidebar-bg').on('click', toggleSidebar);
 
-                Schedule.init();
-            
-                $.getJSON('schedule.json', function(data) {
-                    sessionStorage.setItem('schedules', JSON.stringify(data.schedules));
-                    Schedule.setSchedule('#scheduleDiv', data.schedules[0]);
+                // TODO don't hardcode available tags.
+                var courseChips = Chips({
+                    availableTags: ["CIS 1001", "CIS 1068", "CIS 1166", "CIS 2033", "CIS 2168", "CIS 3207", "CIS 3223", "CIS 3308"],
+                    inputTag: "course-search",
+                    chipsDiv: "course-chips"
                 });
+
+                $('#create-schedules-button').on('click', function() {
+                    let courses = courseChips.getSelected();
+                    if(courses.length === 0) {
+                        $('#course-chips').html("You must add at least one course to create a schedule.");
+                    } else {
+                        $.when(
+                            postClassTimes(
+                                {
+                                    courses: courses
+                                }
+                            )
+                        ).then(function(response) {
+                            sessionStorage.setItem('schedules', JSON.stringify(response));
+                            addSchedules(response);
+                            
+                            Schedule.setSchedule('#schedule-div', response[0]);
+                            $('#schedule-div').show();
+                            $('#select-classes-button').show();
+                            $('#form-div').hide();
+                        });
+                    }
+                });
+
+                $('#select-classes-button').on('click', function() {
+                    $('#schedule-div').hide();
+                    $('#select-classes-button').show();
+                    $('#form-div').show();
+                })
+
+                Schedule.init();
+
+                /* TODO add caching
+                let cachedSchedules = sessionStorage.getItem('schedules');
+                if(cachedSchedules !== null) {
+                    addSchedules(JSON.parse(cachedSchedules));
+                }
+                */
             });
+
+            function addSchedules(schedules) {
+                $('#schedule-list').html('<ul class="list-group force-overflow"></ul>');
+                
+                for(let i = 0; i < schedules.length; i++) {
+                    $('#schedule-list ul').append(
+                        $(`<li class="list-group-item">Schedule ${i + 1}</li>`).on('click', function() {
+                            Schedule.setSchedule('#schedule-div', schedules[i]);
+                        })
+                    );
+                }
+            }
 
             function toggleSidebar() {
                 // open or close navbar

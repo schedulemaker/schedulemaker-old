@@ -48,6 +48,7 @@ Schedule.init = () => {
  */
 Schedule.setSchedule = (divId, schedule) => {
     Schedule.resetSchedule(divId);
+    
     for(var classTime of schedule) {
         Schedule.addClassTime(divId, classTime);
     }
@@ -155,6 +156,13 @@ Schedule.addBox = (divId, classTime, dayOfWeek) => {
  */
 Schedule.resetSchedule = (divId) => {
     $(`${divId} .scheduleClassTime`).remove();
+    Schedule.dayOfWeekDivOffsets = {
+        "monday": 0,
+        "tuesday": 0,
+        "wednesday": 0,
+        "thursday": 0,
+        "friday": 0
+    };
 }
 
 /**
