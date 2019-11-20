@@ -11,7 +11,7 @@ Time.getPrintTime = (time) => {
     }
 
     // Zero-pad minutes if single digit.
-    if(mins.length === 1) {
+    if(mins % 10 === mins) {
         mins = '0' + mins;
     }
 

@@ -77,6 +77,40 @@ html {
     transition: all var(--transition-time);
 }
 
+#schedule-list {
+    margin: 20px;
+    height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+
+    border-radius: 10px;
+    
+    color: #000;
+    background-color: #FFF;
+}
+
+#select-classes-button {
+    margin: 20px;
+    width: calc(var(--sidebar-width) - 60px);
+}
+
+#form-div form {
+    width: 100%;
+}
+
+#course-chips {
+    background-color: #EEE;
+    height: 64px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.btn-cherry {
+    color: #FFF;
+    background-color: var(--color-cherry);
+}
+
 @media screen and (min-width: 768px) {
     html {
         --content-width: calc(80% - var(--sidebar-width));
