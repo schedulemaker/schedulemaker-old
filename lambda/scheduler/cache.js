@@ -5,11 +5,8 @@
  */
 module.exports = function(){
 
-    if (!aws){
-        var aws = require('aws-sdk');
-    }
-
     if (!documentclient){
+        var aws = require('aws-sdk');
         var documentclient = new aws.DynamoDB.DocumentClient();
     }
 
