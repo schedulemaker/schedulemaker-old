@@ -12,7 +12,23 @@ exports.handler = async (event, context) => {
     let courseList = params.courses;
     console.log(`Received the following courses: ${courseList}`);
 
-    let data = await getSections(courseList);
+    try {
+        var data = await getSections(courseList);
+    } catch (error) {
+        console.log(`'Unable to get all courses from database: ${error}`);
+        return {
+            statusCode: '500',
+            body: JSON.stringify({
+                Error: error
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Methods': '*',
+                'Access-Control-Allow-Origin': '*'
+            }
+        };
+    }
+    
     let courses = DBToScheduler(data);
     let schedules = scheduler.createSchedules(courses);
     let results = SchedulerToUI(schedules);
@@ -26,7 +42,7 @@ exports.handler = async (event, context) => {
             'Access-Control-Allow-Methods': '*',
             'Access-Control-Allow-Origin': '*'
         }
-    }
+    };
 };
 
 async function getSections(courses){
@@ -44,15 +60,7 @@ async function getSections(courses){
             }
         };
 
-        try {
-            return docClient.query(params).promise();
-        } catch (error) {
-            console.log({
-                'Error': error,
-                'Course': course,
-                'Params': params
-            });
-        }
+        return docClient.query(params).promise();
     }));
 }
 
