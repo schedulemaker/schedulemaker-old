@@ -13,8 +13,20 @@ module.exports = function(){
         var documentclient = new aws.DynamoDB.DocumentClient();
     }
 
+    if (!scheduler){
+        var Scheduler = require('scheduler');
+        var scheduler = new Scheduler();
+    }
+
+    if(!conversions){
+        var conversions = require('conversions');
+    }
+
     return {
-        DocumentClient: documentclient
+        DocumentClient: documentclient,
+        Scheduler: scheduler,
+        DBToScheduler: conversions.DBToScheduler,
+        SchedulerToUI: conversions.SchedulerToUI
     }
 
 }();

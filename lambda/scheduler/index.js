@@ -1,20 +1,23 @@
-var Scheduler = require('scheduler');
-var conversions = require('conversions');
 
 if (!cache){
     var cache = require('./cache');
 }
 
 exports.handler = async (event, context) => {
+    let DBToScheduler = cache.DBToScheduler;
+    let SchedulerToUI = cache.SchedulerToUI;
+    let scheduler = cache.Scheduler;
+
     let params = JSON.parse(event.body);
     let courseList = params.courses;
     console.log(`Received the following courses: ${courseList}`);
+
     let data = await getSections(courseList);
-    let courses = conversions.DBToScheduler.convert(data);
-    let scheduler = new Scheduler();
+    let courses = DBToScheduler(data);
     let schedules = scheduler.createSchedules(courses);
-    let results = conversions.SchedulerToUI.convert(schedules);
+    let results = SchedulerToUI(schedules);
     console.log(`Created ${results.length} schedules`);
+    
     return {
         statusCode: '200',
         body: JSON.stringify(results),
@@ -27,6 +30,7 @@ exports.handler = async (event, context) => {
 };
 
 async function getSections(courses){
+    let docClient = cache.DocumentClient;
     return Promise.all(courses.map(async course => {
         let params = {
             TableName : process.env.TABLENAME,
@@ -41,9 +45,13 @@ async function getSections(courses){
         };
 
         try {
-            return cache.DocumentClient.query(params).promise();
+            return docClient.query(params).promise();
         } catch (error) {
-            console.log(`Error retrieving sections for ${course}: ${error} Params: ${params}`);
+            console.log({
+                'Error': error,
+                'Course': course,
+                'Params': params
+            });
         }
     }));
 }
