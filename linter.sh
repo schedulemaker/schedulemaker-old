@@ -1,17 +1,9 @@
 #!/bin/bash
 
-for f in $(find hello-world/ -name '*.js'); do
-    jshint $f
-done
+directories="hello-world/ lambda/ s3/ templates/"
 
-for f in $(find lambda/ -name '*.js'); do
-    jshint $f
-done
-
-for f in $(find s3/ -name '*.js'); do
-    jshint $f
-done
-
-for f in $(find template/ -name '*.js'); do
-    jshint $f
+for directory in $directories; do
+    for file in $(find $directory -name '*.js'); do
+        jshint $file
+    done
 done
