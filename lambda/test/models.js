@@ -1,3 +1,5 @@
+/*jshint esversion: 8*/
+
 var models = require('models');
 var asssert = require('assert');
 var fs = require ('fs');
@@ -7,7 +9,7 @@ var readFile = promisify(fs.readFile);
 describe('models', function() {
 
     describe('#BannerToDB.convert', function() {
-        var testData = {}
+      var testData = {};
         before(async function(){
             testData = JSON.parse(await readFile('./test/models.json'));
         });

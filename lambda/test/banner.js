@@ -1,3 +1,5 @@
+/*jshint esversion: 8*/
+
 var assert = require('assert');
 var Banner = require('banner');
 
@@ -5,7 +7,7 @@ describe('Banner', async function () {
   /**
    * SETUP
    */
-  const term = 202003
+  const term = 202003;
 
   /**
    * BUILD()
