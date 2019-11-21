@@ -1,3 +1,6 @@
+/*jshint esversion: 8*/
+/*jshint -W014*/
+
 var Schedule = {};
 
 /**
@@ -26,9 +29,9 @@ Schedule.init = () => {
     }
 
     // Create row divs.
-    for(var i = 8; i < 18; i++) {
-        let displayNum = i;
-        if(i > 12) {
+    for(var j = 8; j < 18; j++) {
+        let displayNum = j;
+        if(j > 12) {
             displayNum -= 12;
         }
         $('.schedule').append(
@@ -39,7 +42,7 @@ Schedule.init = () => {
             </div>`
         );
     }
-}
+};
 
 /**
  * setSchedule adds classTime objects to the Schedule.
@@ -81,9 +84,9 @@ Schedule.addClassTime = (divId, classTime) => {
 
         var rgb = [0, 0, 0];
 
-        for (var i = 0; i < 3; i++) {
-            var value = (hash >> (i * 8)) & 255;
-            rgb[i] = value;
+        for (var j = 0; j < 3; j++) {
+            var value = (hash >> (j * 8)) & 255;
+            rgb[j] = value;
         }
         return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 0.5)`;
     }
@@ -163,7 +166,7 @@ Schedule.resetSchedule = (divId) => {
         "thursday": 0,
         "friday": 0
     };
-}
+};
 
 /**
  * openClassModal replaces the text within a modal with the correct information and opens it.
@@ -180,4 +183,4 @@ Schedule.openClassModal = (classTime) => {
     <ul>
     `);
     $('#classModal').modal();
-}
+};
