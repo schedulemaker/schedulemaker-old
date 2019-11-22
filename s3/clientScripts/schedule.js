@@ -126,8 +126,7 @@ Schedule.addBox = (divId, classTime, dayOfWeek) => {
      */
     let verticalOffset = (Time.getHour(classTime.startTime) - 8) * 60
                        + Time.getMins(classTime.startTime)
-                       - Schedule.dayOfWeekDivOffsets[dayOfWeek]
-                       + 3;
+                       - Schedule.dayOfWeekDivOffsets[dayOfWeek];
 
     // We then update dayOfWeekDivOffsets with the current height.
     Schedule.dayOfWeekDivOffsets[dayOfWeek] += height;

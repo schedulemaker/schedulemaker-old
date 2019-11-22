@@ -26,9 +26,32 @@
 	position: relative;
 	z-index: 500;
 	float: left;
-	width: 20%;
-	margin-top: -30px;
+    width: 20%;
+	margin-top: -27px;
 }
+
+/*
+.monday {
+    left: 0;
+}
+
+.tuesday {
+    left: 20%;
+}
+
+.wednesday {
+    left: 40%;
+}
+
+.thursday {
+    left: 60%;
+}
+
+.friday {
+    left: 20%;
+}
+*/
+
 
 .scheduleClassTime {
     position: relative;
