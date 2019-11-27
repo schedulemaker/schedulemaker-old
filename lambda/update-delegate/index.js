@@ -1,11 +1,17 @@
 'use strict';
 
 if (!cache){
-    var cahce = require('./cache');
+    var cache = require('./cache');
 }
 
 exports.handler = async (event, context) => {
-    let 
+    const banner = cache.Banner;
+    try {
+        var subjects = await banner.getSubjects();
+        await Promise.all(subjects.map(subject => delegate(subject)));
+    } catch (error) {
+        console.log(`Failed to fetch subjects from Banner: ${error}`);
+    }
 }
 
 /**
@@ -14,6 +20,7 @@ exports.handler = async (event, context) => {
  * @param {string} subject 
  */
 async function delegate(subject){
+    const lambda = cache.Lambda;
     const params = {
         'FunctionName': process.env.FUNCTION_NAME,
         'InvocationType': 'Event',

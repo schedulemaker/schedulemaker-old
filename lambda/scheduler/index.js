@@ -45,7 +45,7 @@ exports.handler = async (event, context) => {
 };
 
 async function getSections(courses, campus){
-    let docClient = cache.DocumentClient;
+    const docClient = cache.DocumentClient;
     return Promise.all(courses.map(async course => {
         let params = {
             TableName : process.env.TABLENAME,
