@@ -51,7 +51,8 @@ async function getSections(courses, campus){
             TableName : process.env.TABLENAME,
             KeyConditionExpression : "#courseName = :course",
             ExpressionAttributeNames : {
-                "#courseName" : "courseName"
+                "#courseName" : "courseName",
+                '#campus': 'campus'
             },
             ExpressionAttributeValues : function(){
                 let obj = {":course": course};
