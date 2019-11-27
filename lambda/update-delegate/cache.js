@@ -12,8 +12,14 @@ module.exports = function(){
         var banner = new Banner(process.env.TERM);
     }
 
+    if (!lambda){
+        var AWS = require('aws-sdk');
+        var lambda = new AWS.Lambda();
+    }    
+
     return {
         Banner: banner,
+        Lambda: lambda
     }
 
 }();
