@@ -1,3 +1,4 @@
+'use strict';
 
 if (!cache){
     var cache = require('./cache');
@@ -13,14 +14,12 @@ exports.handler = async (event, context) => {
     console.log(`Received the following courses: ${courseList}`);
 
     try {
-        var data = await getSections(courseList);
+        var data = await getSections(courseList, params.campus);
     } catch (error) {
         console.log(`'Unable to get all courses from database: ${error}`);
         return {
             statusCode: '500',
-            body: JSON.stringify({
-                Error: error
-            }),
+            body: "Unable to process request",
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Methods': '*',
@@ -45,7 +44,7 @@ exports.handler = async (event, context) => {
     };
 };
 
-async function getSections(courses){
+async function getSections(courses, campus){
     let docClient = cache.DocumentClient;
     return Promise.all(courses.map(async course => {
         let params = {
@@ -54,10 +53,12 @@ async function getSections(courses){
             ExpressionAttributeNames : {
                 "#courseName" : "courseName"
             },
-            ExpressionAttributeValues : {
-                ":course" : course
-                
-            }
+            ExpressionAttributeValues : function(){
+                let obj = {":course": course};
+                campus.forEach(campus => obj[`:${campus}`] = campus);
+                return obj;
+            }(),
+            FilterExpression: `#campus IN (${campus.map(campus => `:${campus}`).join()})`
         };
 
         return docClient.query(params).promise();
