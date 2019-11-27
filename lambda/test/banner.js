@@ -1,4 +1,5 @@
 /*jshint esversion: 8*/
+'use strict';
 
 var assert = require('assert');
 var Banner = require('banner');
@@ -129,17 +130,18 @@ describe('Banner', async function () {
    */
   describe('#getInstructors()', function () {
     this.timeout(15000);
+    var data = null;
     it('Should not throw an error', async function () {
       assert.doesNotReject(banner.getInstructors());
     });
 
     it('Should not return void', async function () {
-      assert(await banner.getInstructors());
+      data = await banner.getInstructors();
+      assert(data);
     });
 
-    it('Should return a non-empty array', async function () {
-      let terms = await banner.getInstructors();
-      assert(terms.length > 0);
+    it('Should return a non-empty array', function () {
+      assert(data.length > 0);
     });
   });
 
@@ -148,12 +150,18 @@ describe('Banner', async function () {
    */
   describe('#classSearch(subjects)', function () {
     this.timeout(15000);
+    var data = null;
     it('Should throw an error when a subject is not passed', function () {
       assert.rejects(async () => banner.classSearch, Error, 'Must provide subject');
     });
 
     it('Should not return NULL', async function(){
-      assert(await banner.classSearch('CIS'));
+      data = await banner.classSearch('CIS');
+      assert(data);
+    });
+
+    it('Should return a non-empty array', function () {
+      assert(data.length > 0);
     });
   });
 });

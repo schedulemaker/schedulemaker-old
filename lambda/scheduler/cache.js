@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @module Cache 
  * Controls the state of global objects representing connections to AWS services that can be reused throughout invokations. 

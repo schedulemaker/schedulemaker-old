@@ -1,3 +1,5 @@
+'use strict';
+
 var {BannerToDB} = require('conversions');
 var asssert = require('assert');
 var fs = require ('fs');
