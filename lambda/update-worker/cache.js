@@ -6,17 +6,10 @@
  * If the variable does not exist in the namespace, it is instantiated and then reused upon subsequent executions in the same container.
  */
 module.exports = function(){
-    if (!AWS){
-        var AWS = require('aws-sdk');
-    }
 
     if (!documentclient){
-        
+        var AWS = require('aws-sdk');
         var documentclient = new AWS.DynamoDB.DocumentClient();
-    }
-
-    if (!s3){
-        var s3 = new AWS.S3();
     }
 
     if (!banner){
