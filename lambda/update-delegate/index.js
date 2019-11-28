@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
     const banner = cache.Banner;
     try {
         var subjects = await banner.getSubjects();
-        await Promise.all(subjects.map(subject => delegate(subject)));
+        await Promise.all(subjects.map(subject => delegate(subject.code)));
     } catch (error) {
         console.log(`Failed to fetch subjects from Banner: ${error}`);
     }
