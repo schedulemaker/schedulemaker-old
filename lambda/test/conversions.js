@@ -1,32 +1,35 @@
 'use strict';
 
-var {BannerToDB} = require('conversions');
+var {BannerToDB, ConvertBannerCatalog} = require('conversions');
 var asssert = require('assert');
 var fs = require ('fs');
-var { promisify } = require('util');
-var readFile = promisify(fs.readFile);
 
 describe('conversions', function() {
+    var data = JSON.parse(fs.readFileSync('./test/conversions.json', 'utf8'));
+    console.log(data)
 
     describe('#BannerToDB', function() {
-        var testData = {}
-        before(async function(){
-            testData = JSON.parse(await readFile('./test/conversions.json'));
-        });
-       
+        let testData = data.BannerToDB;
         it('Should create multiple classtimes', function() {
-            let data = testData['multipleMeetingTimes'];
-            asssert.deepEqual(BannerToDB([data.input]), [data.output]);
+            let example = testData['multipleMeetingTimes'];
+            asssert.deepStrictEqual(BannerToDB([example.input]), [example.output]);
         });
 
         it('Should create empty classtime array for meetingTimes with no days', function() {
-            let data = testData['meetingTimeNoDays'];
-            asssert.deepEqual(BannerToDB([data.input]), [data.output]);
+            let example = testData['meetingTimeNoDays'];
+            asssert.deepStrictEqual(BannerToDB([example.input]), [example.output]);
         });
 
         it('Should handle empty meetingTime and faculty arrays', function() {
-            let data = testData['emptyMeetings'];
-            asssert.deepEqual(BannerToDB([data.input]), [data.output]);
+            let example = testData['emptyMeetings'];
+            asssert.deepStrictEqual(BannerToDB([example.input]), [example.output]);
+        });
+    });
+
+    describe('#ConvertBannerCatalog', function() {
+        let testData = data.BannerCatalog;
+        it('Should return a concatenated string', function() {
+            asssert.deepStrictEqual(ConvertBannerCatalog([testData.input]), [testData.output]);
         });
     });
 });
