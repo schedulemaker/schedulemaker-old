@@ -52,14 +52,18 @@ async function getSections(courses, campus){
             KeyConditionExpression : "#courseName = :course",
             ExpressionAttributeNames : {
                 "#courseName" : "courseName",
-                '#campus': 'campus'
+                '#campus': 'campus',
+                '#isOpen': 'isOpen'
             },
             ExpressionAttributeValues : function(){
-                let obj = {":course": course};
+                let obj = {
+                    ":course": course,
+                    ':true': true
+                };
                 campus.forEach(campus => obj[`:${campus}`] = campus);
                 return obj;
             }(),
-            FilterExpression: `#campus IN (${campus.map(campus => `:${campus}`).join()})`
+            FilterExpression: `#isOpen = :true AND #campus IN (${campus.map(campus => `:${campus}`).join()})`
         };
 
         return docClient.query(params).promise();
