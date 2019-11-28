@@ -24,8 +24,7 @@ module.exports = function(){
     return {
         DocumentClient: documentclient,
         Banner: banner,
-        BannerToDB: conversions.BannerToDB,
-        S3: s3
+        BannerToDB: conversions.BannerToDB
     }
 
 }();
