@@ -79,8 +79,8 @@ html {
 
 #schedule-list {
     margin: 20px;
-    height: 400px;
-    max-height: 400px;
+    height: 200px;
+    max-height: 200px;
     overflow-y: auto;
 
     border-radius: 10px;
@@ -109,6 +109,18 @@ html {
 .btn-cherry {
     color: #FFF;
     background-color: var(--color-cherry);
+}
+
+.day-picker {
+    padding: 3px 11px
+}
+
+.reduce-padding {
+    padding: 5px 10px
+}
+
+.list-group-horizontal {
+    color: #000;
 }
 
 @media screen and (min-width: 768px) {
