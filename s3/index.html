@@ -206,6 +206,9 @@
                             
                         })
                     );
+                    if(i == 0) {
+                        $(".reduce-padding").addClass("active");
+                    }
                 }
             }
 
@@ -222,16 +225,21 @@
                 }
 
                 //Removes the schedules that do not follow the filter rules
-                for(var i = 0; i < schedules.length; i++) {
-                    for (var j = 0; j < schedules[i].length; j++) {
-                        if (selectedDays.indexOf((schedules[i][j].day)) == -1) {
-                            schedules.splice(i, 1);
-                            i -= 1;
-                            break;
-                        }
-                    } 
+                if(selectedDays.length > 0) {
+                    for(var i = 0; i < schedules.length; i++) {
+                        for (var j = 0; j < schedules[i].length; j++) {
+                            if (selectedDays.indexOf((schedules[i][j].day)) == -1) {
+                                schedules.splice(i, 1);
+                                i -= 1;
+                                break;
+                            }
+                        } 
+                    }
                 }
                 addSchedules(schedules);
+                if (schedules.length > 0) {
+
+                }
             }
 
             function toggleSidebar() {
