@@ -17,9 +17,26 @@
     <body>
         <div id="sidebar" class="shadow">
             <h1>ScheduleMaker</h1>
+            <hr>
             <div id="schedule-list" class="shadow">
-
             </div>
+
+            <br>
+
+            <div id="filter-options">
+            <h4>Filters</h4>
+            <hr>
+            <ul class="list-group list-group-horizontal d-flex justify-content-center" id="days-of-week">
+                <li class="list-group-item day-picker">M</li>
+                <li class="list-group-item day-picker">T</li>
+                <li class="list-group-item day-picker">W</li>
+                <li class="list-group-item day-picker">R</li>
+                <li class="list-group-item day-picker">F</li>
+                <li class="list-group-item day-picker">S</li>
+                <li class="list-group-item day-picker">U</li>
+            </ul>
+            </div>
+
             <button id="select-classes-button" type="button" class="btn btn-light">Select Classes</button>
         </div>
         <div id="sidebar-collapse">
@@ -84,6 +101,7 @@
             $(document).ready(function () {
                 $('#schedule-div').hide();
                 $('#select-classes-button').hide();
+                $('#filter-options').hide();
 
                 // Toggle sidebar events.
                 $('#sidebar-collapse').on('click', toggleSidebar);
@@ -114,6 +132,7 @@
                             Schedule.setSchedule('#schedule-div', response[0]);
                             $('#schedule-div').show();
                             $('#select-classes-button').show();
+                            $('#filter-options').show();
                             $('#form-div').hide();
                         });
                     }
@@ -122,8 +141,20 @@
                 $('#select-classes-button').on('click', function() {
                     $('#schedule-div').hide();
                     $('#select-classes-button').show();
+                    $('#filter-options').show();
                     $('#form-div').show();
                 })
+
+                $(".list-group li").on("click", function() {
+                    if ($(this).hasClass("active")) {
+                        $(this).removeClass("active");
+                        filterByDay();
+
+                    } else {
+                        $(this).addClass("active");
+                        filterByDay();   
+                    }
+                });
 
                 Schedule.init();
 
@@ -140,11 +171,39 @@
                 
                 for(let i = 0; i < schedules.length; i++) {
                     $('#schedule-list ul').append(
-                        $(`<li class="list-group-item">Schedule ${i + 1}</li>`).on('click', function() {
+                        $(`<li class="list-group-item reduce-padding">Schedule ${i + 1}</li>`).on('click', function() {
+                            $(".force-overflow li").removeClass("active");
+                            $(this).addClass("active");
                             Schedule.setSchedule('#schedule-div', schedules[i]);
+                            
                         })
                     );
                 }
+            }
+
+            function filterByDay() {
+                var schedules = JSON.parse(sessionStorage.getItem('schedules'));
+                var selectedDays = [];
+
+                //Get the selected days to be filter by (eg. MWF)
+                var previouslySelectedDays = document.getElementsByClassName("day-picker");
+                for (let i = 0; i < previouslySelectedDays.length; i++) {
+                    if (previouslySelectedDays[i].classList.contains('active')) {
+                        selectedDays.push(previouslySelectedDays[i].innerHTML);
+                    }
+                }
+
+                //Removes the schedules that do not follow the filter rules
+                for(var i = 0; i < schedules.length; i++) {
+                    for (var j = 0; j < schedules[i].length; j++) {
+                        if (selectedDays.indexOf((schedules[i][j].day)) == -1) {
+                            schedules.splice(i, 1);
+                            i -= 1;
+                            break;
+                        }
+                    } 
+                }
+                addSchedules(schedules);
             }
 
             function toggleSidebar() {
