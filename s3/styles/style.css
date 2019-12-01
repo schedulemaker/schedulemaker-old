@@ -123,6 +123,19 @@ html {
     color: #000;
 }
 
+.center {
+    padding: 10px 28px;
+}
+
+.btn-width {
+    width: 110px;
+}
+
+.dropdown-menu {         
+    max-height: 100px;
+    overflow-y: auto;
+  }
+
 @media screen and (min-width: 768px) {
     html {
         --content-width: calc(80% - var(--sidebar-width));

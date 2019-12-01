@@ -17,7 +17,6 @@
     <body>
         <div id="sidebar" class="shadow">
             <h1>ScheduleMaker</h1>
-            <hr>
             <div id="schedule-list" class="shadow">
             </div>
 
@@ -35,9 +34,73 @@
                 <li class="list-group-item day-picker">S</li>
                 <li class="list-group-item day-picker">U</li>
             </ul>
+
+            <div class="center">
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle btn-sm btn-width" style="float: left;" id="startDropdownBtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Starts After
+                </button>
+                <div class="dropdown-menu" id="startDropdown" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#0">Any</a>
+                  <a class="dropdown-item" href="#700">7:00am</a>
+                  <a class="dropdown-item" href="#730">7:30am</a>
+                  <a class="dropdown-item" href="#800">8:00am</a>
+                  <a class="dropdown-item" href="#830">8:30am</a>
+                  <a class="dropdown-item" href="#900">9:00am</a>
+                  <a class="dropdown-item" href="#930">9:30am</a>
+                  <a class="dropdown-item" href="#1000">10:00am</a>
+                  <a class="dropdown-item" href="#1030">10:30am</a>
+                  <a class="dropdown-item" href="#1100">11:00am</a>
+                  <a class="dropdown-item" href="#1130">11:30am</a>
+                  <a class="dropdown-item" href="#1200">12:00pm</a>
+                  <a class="dropdown-item" href="#1230">12:30pm</a>
+                  <a class="dropdown-item" href="#1300">1:00pm</a>
+                  <a class="dropdown-item" href="#1330">1:30pm</a>
+                  <a class="dropdown-item" href="#1400">2:00pm</a>
+                  <a class="dropdown-item" href="#1430">2:30pm</a>
+                  <a class="dropdown-item" href="#1500">3:00pm</a>
+                  <a class="dropdown-item" href="#1530">3:30pm</a>
+                  <a class="dropdown-item" href="#1600">4:00pm</a>
+                  <a class="dropdown-item" href="#1630">4:30pm</a>
+                  <a class="dropdown-item" href="#1700">5:00pm</a>
+                </div>
             </div>
 
-            <button id="select-classes-button" type="button" class="btn btn-light">Select Classes</button>
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle btn-sm btn-width" style="float: right;" id="endDropdownBtn" type="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ends Before
+                </button>
+                <div class="dropdown-menu" id="endDropdown" aria-labelledby="dropdownMenuButton2">
+                    <a class="dropdown-item" href="#0">Any</a>
+                    <a class="dropdown-item" href="#700">7:00am</a>
+                    <a class="dropdown-item" href="#730">7:30am</a>
+                    <a class="dropdown-item" href="#800">8:00am</a>
+                    <a class="dropdown-item" href="#830">8:30am</a>
+                    <a class="dropdown-item" href="#900">9:00am</a>
+                    <a class="dropdown-item" href="#930">9:30am</a>
+                    <a class="dropdown-item" href="#1000">10:00am</a>
+                    <a class="dropdown-item" href="#1030">10:30am</a>
+                    <a class="dropdown-item" href="#1100">11:00am</a>
+                    <a class="dropdown-item" href="#1130">11:30am</a>
+                    <a class="dropdown-item" href="#1200">12:00pm</a>
+                    <a class="dropdown-item" href="#1230">12:30pm</a>
+                    <a class="dropdown-item" href="#1300">1:00pm</a>
+                    <a class="dropdown-item" href="#1330">1:30pm</a>
+                    <a class="dropdown-item" href="#1400">2:00pm</a>
+                    <a class="dropdown-item" href="#1430">2:30pm</a>
+                    <a class="dropdown-item" href="#1500">3:00pm</a>
+                    <a class="dropdown-item" href="#1530">3:30pm</a>
+                    <a class="dropdown-item" href="#1600">4:00pm</a>
+                    <a class="dropdown-item" href="#1630">4:30pm</a>
+                    <a class="dropdown-item" href="#1700">5:00pm</a>
+                </div>
+            </div>
+            </div>
+
+            </div>
+
+            <button id="select-classes-button" type="button" class="btn btn-light">Create New Schedule</button>
         </div>
         <div id="sidebar-collapse">
             <i class="fa fa-chevron-right"></i>
@@ -180,8 +243,26 @@
 
                     } else {
                         $(this).addClass("active");
-                        filterByDay();   
+                        filterByDay($(this).attr("href"));   
                     }
+                });
+
+                $('#startDropdown a').on("click", function() {
+                    $('#startDropdown a').removeClass("active");
+                    $(this).addClass("active");
+
+                    $('#startDropdownBtn').text($(this).text());
+
+                    filterByTime();
+                });
+
+                $('#endDropdown a').on("click", function() {
+                    $('#endDropdown a').removeClass("active");
+                    $(this).addClass("active");
+
+                    $('#endDropdownBtn').text($(this).text());
+
+                    filterByTime($(this).attr("href"));
                 });
 
                 Schedule.init();
@@ -237,9 +318,40 @@
                     }
                 }
                 addSchedules(schedules);
-                if (schedules.length > 0) {
+                Schedule.setSchedule('#schedule-div', schedules[0]);
+            }
 
+            function filterByTime() {
+                var schedules = JSON.parse(sessionStorage.getItem('schedules'));
+                var startTimeFilter = 0;
+                var endTimeFilter = 2399;
+                
+                //Gets the time filter values
+                var previouslySelectedTimes = document.getElementsByClassName("dropdown-item");
+                for (let i = 0; i < previouslySelectedTimes.length; i++) {
+                    if (previouslySelectedTimes[i].classList.contains('active')) {
+                        if(previouslySelectedTimes[i].parentNode.id == "startDropdown") {
+                            startTimeFilter = Number(previouslySelectedTimes[i].getAttribute("href").toString().substr(1));
+
+                        } else if(previouslySelectedTimes[i].parentNode.id == "endDropdown") {
+                            endTimeFilter = Number(previouslySelectedTimes[i].getAttribute("href").toString().substr(1));
+                        }
+                    }
                 }
+
+                //Removes the schedules that do not follow the filter rules
+                for (var i = 0; i < schedules.length; i++) {
+                    for (var j = 0; j < schedules[i].length; j++) {
+                        if ((schedules[i][j].startTime < startTimeFilter) && (schedules[i][j].endTime > endTimeFilter)) {
+                            console.log("Schecule deleted");
+                            schedules.splice(i, 1);
+                            i -= 1;
+                            break;
+                        }
+                    }
+                }
+                addSchedules(schedules);
+                Schedule.setSchedule('#schedule-div', schedules[0]);
             }
 
             function toggleSidebar() {
