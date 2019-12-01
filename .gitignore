@@ -7,4 +7,6 @@ lambda/node_modules/.bin
 hello-world/out.json
 test.js
 test.json
+package-lock.json
+node_modules/
 scratch.js

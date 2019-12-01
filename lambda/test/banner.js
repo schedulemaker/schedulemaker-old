@@ -1,3 +1,4 @@
+/*jshint esversion: 8*/
 'use strict';
 
 var assert = require('assert');
@@ -7,7 +8,7 @@ describe('Banner', function () {
   /**
    * SETUP
    */
-  const term = 202003
+  const term = 202003;
 
   /**
    * CONSTRUCTOR

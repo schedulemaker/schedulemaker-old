@@ -1,4 +1,6 @@
-var Time = {}
+/*jshint esversion: 8*/
+
+var Time = {};
 
 Time.getPrintTime = (time) => {
     let hour = Time.getHour(time);
@@ -16,17 +18,17 @@ Time.getPrintTime = (time) => {
     }
 
     return `${hour}:${mins}${period}`;
-}
+};
 
 Time.getHour = (time) => {
     return Math.floor(time / 100);
-}
+};
 
 Time.getMins = (time) => {
     return time % 100;
-}
+};
 
 // getTimeDelta gets the time between two times in minutes.
 Time.getTimeDelta = (start, end) => {
     return (Time.getHour(end) - Time.getHour(start)) * 60 + (Time.getMins(end) - Time.getMins(start)) % 60;
-}
+};

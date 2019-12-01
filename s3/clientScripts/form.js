@@ -1,3 +1,6 @@
+/*jshint esversion: 8*/
+/*jshint -W083*/
+
 /**
  *
  * @param {Object} params : an Object containing the following keys:
@@ -41,7 +44,7 @@ function Chips(params) {
                         <span>
                             X
                         </span>`
-                    ).on('click', function() {
+                     ).on('click', function() {
                         availableTags.push(selectedTag);
                         var i = selected.indexOf(selectedTag);
                         selected.splice(i, 1);
@@ -54,7 +57,7 @@ function Chips(params) {
 
     Chips.getSelected = () => {
         return selected;
-    }
+    };
 
     return Chips;
 }
