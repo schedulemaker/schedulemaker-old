@@ -1,3 +1,6 @@
+/*jshint esversion: 8*/
+/*jshint -W083*/
+
 /**
  *
  * @param {Object} params : an Object containing the following keys:
@@ -68,7 +71,6 @@ function Chips(params) {
                 })
             );
             $(`#${params.chipsDiv}`).append(newChip);
-            $(newChip).tooltip();
         }
     }
 

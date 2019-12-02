@@ -1,3 +1,5 @@
+/*jshint esversion: 8*/
+
 /**
  * postClassTimes sends a POST request to get the schedules.
  * @param {Object} params : An object containing the following keys:
@@ -10,7 +12,7 @@
  */
 async function postClassTimes(params) {
     let courses = params.courses || [];
-    let days = params.days || "MTWRF"
+    let days = params.days || "MTWRF";
     let startTime = params.startTime || 0;
     let endTime = params.endTime || 2359;
     let campus = params.campus || "MN";

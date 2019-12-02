@@ -1,3 +1,5 @@
+/*jshint esversion: 8 */
+
 /**
  * Load the caching module if it doesn't exist in the namespace
  */
@@ -55,5 +57,4 @@ exports.handler = async function(event, context){
         return error;
     }
     
-}
-
+};
