@@ -72,7 +72,7 @@
                     Ends Before
                 </button>
                 <div class="dropdown-menu" id="endDropdown" aria-labelledby="dropdownMenuButton2">
-                    <a class="dropdown-item" href="#0">Any</a>
+                    <a class="dropdown-item" href="#2399">Any</a>
                     <a class="dropdown-item" href="#700">7:00am</a>
                     <a class="dropdown-item" href="#730">7:30am</a>
                     <a class="dropdown-item" href="#800">8:00am</a>
@@ -218,9 +218,19 @@
                             )
                         ).then(function(response) {
                             sessionStorage.setItem('schedules', JSON.stringify(response));
+                            sessionStorage.setItem('schedulesFilteredByDay', JSON.stringify(response));
+                            sessionStorage.setItem('schedulesFilteredByTime', JSON.stringify(response));
+
+                            //Reset filters
+                            $(".dropdown-menu a").removeClass("active");
+                            $(".list-group li").removeClass("active");
+                            $('#startDropdownBtn').text("Starts After");
+                            $('#endDropdownBtn').text("Ends Before");
+
                             addSchedules(response);
                             
                             Schedule.setSchedule('#schedule-div', response[0]);
+
                             $('#schedule-div').show();
                             $('#select-classes-button').show();
                             $('#filter-options').show();
@@ -243,7 +253,7 @@
 
                     } else {
                         $(this).addClass("active");
-                        filterByDay($(this).attr("href"));   
+                        filterByDay();   
                     }
                 });
 
@@ -295,6 +305,7 @@
 
             function filterByDay() {
                 var schedules = JSON.parse(sessionStorage.getItem('schedules'));
+                var schedulesFilteredByTime = JSON.parse(sessionStorage.getItem('schedulesFilteredByTime'));
                 var selectedDays = [];
 
                 //Get the selected days to be filter by (eg. MWF)
@@ -317,12 +328,23 @@
                         } 
                     }
                 }
-                addSchedules(schedules);
-                Schedule.setSchedule('#schedule-div', schedules[0]);
+                sessionStorage.setItem('schedulesFilteredByDay', JSON.stringify(schedules));
+
+                var results = [];
+                for (var i = 0; i < schedules.length; i++) {
+                    if (JSON.stringify(schedulesFilteredByTime).includes(JSON.stringify(schedules[i]))) {
+                        results.push(schedules[i]);
+                    }
+                }
+
+                addSchedules(results);
+                Schedule.setSchedule('#schedule-div', results[0]);
             }
 
             function filterByTime() {
                 var schedules = JSON.parse(sessionStorage.getItem('schedules'));
+                var schedulesFilteredByDay = JSON.parse(sessionStorage.getItem('schedulesFilteredByDay'));
+
                 var startTimeFilter = 0;
                 var endTimeFilter = 2399;
                 
@@ -342,17 +364,32 @@
                 //Removes the schedules that do not follow the filter rules
                 for (var i = 0; i < schedules.length; i++) {
                     for (var j = 0; j < schedules[i].length; j++) {
-                        if ((schedules[i][j].startTime < startTimeFilter) && (schedules[i][j].endTime > endTimeFilter)) {
-                            console.log("Schecule deleted");
+                        if ((schedules[i][j].startTime < startTimeFilter) || (schedules[i][j].endTime > endTimeFilter)) {
                             schedules.splice(i, 1);
                             i -= 1;
                             break;
                         }
                     }
                 }
-                addSchedules(schedules);
-                Schedule.setSchedule('#schedule-div', schedules[0]);
+
+                sessionStorage.setItem('schedulesFilteredByTime', JSON.stringify(schedules));
+
+                var results = [];
+                for (var i = 0; i < schedules.length; i++) {
+                    if (JSON.stringify(schedulesFilteredByDay).includes(JSON.stringify(schedules[i]))) {
+                        results.push(schedules[i]);
+                    }
+                }
+
+                console.log("Filtered by day length: " + schedulesFilteredByDay.length);
+                console.log("Filtered by time length: " + schedules.length);
+                console.log("Results: " + results.length);
+
+                addSchedules(results);
+                Schedule.setSchedule('#schedule-div', results[0]); 
             }
+
+
 
             function toggleSidebar() {
                 // open or close navbar
