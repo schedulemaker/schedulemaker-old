@@ -37,7 +37,11 @@ function filterByDay() {
     }
 
     addSchedules(results);
-    Schedule.setSchedule('#schedule-div', results[0]);
+    if(results.length > 0) {
+        Schedule.setSchedule('#schedule-div', results[0]); 
+    } else {
+        Schedule.setSchedule('#schedule-div');
+    }
 }
 
 
@@ -90,5 +94,10 @@ function filterByTime() {
     console.log("Results: " + results.length);
 
     addSchedules(results);
-    Schedule.setSchedule('#schedule-div', results[0]); 
+    if(results.length > 0) {
+        Schedule.setSchedule('#schedule-div', results[0]); 
+    } else {
+        Schedule.setSchedule('#schedule-div');
+    }
+    
 }

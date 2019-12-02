@@ -36,3 +36,22 @@ async function postClassTimes(params) {
 
     return results;
 }
+
+async function getClasses() {
+    let response = await $.getJSON("classes.json");
+
+    let results = await response;
+
+    let classes = {};
+    for(let currClass of results) {
+        classes[currClass.name + ': ' + currClass.title] = currClass.name;
+    }
+
+    var courseChips = Chips({
+        availableTags: classes,
+        inputTag: "course-search",
+        chipsDiv: "course-chips"
+    });
+
+    return courseChips;
+}

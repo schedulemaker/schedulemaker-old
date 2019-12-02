@@ -51,6 +51,7 @@ Schedule.init = () => {
  */
 Schedule.setSchedule = (divId, schedule) => {
     Schedule.resetSchedule(divId);
+    schedule = schedule || [];
     
     for(var classTime of schedule) {
         Schedule.addClassTime(divId, classTime);

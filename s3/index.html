@@ -165,6 +165,14 @@
         <script src="clientScripts/filters.js"></script>
         <script>
             $(document).ready(function () {
+                // Prevent submit on enter.
+                $(window).keydown(function(event){
+                    if(event.keyCode == 13) {
+                        event.preventDefault();
+                        return false;
+                    }
+                });
+
                 $('#schedule-div').hide();
                 $('#select-classes-button').hide();
                 $('#filter-options').hide();
@@ -173,46 +181,45 @@
                 $('#sidebar-collapse').on('click', toggleSidebar);
                 $('#sidebar-bg').on('click', toggleSidebar);
 
-                // TODO don't hardcode available tags.
-                var courseChips = Chips({
-                    availableTags: ["CIS 1001", "CIS 1068", "CIS 1166", "CIS 2033", "CIS 2168", "CIS 3207", "CIS 3223", "CIS 3308"],
-                    inputTag: "course-search",
-                    chipsDiv: "course-chips"
+                $.when(getClasses()).then(function(response) {
+                    var courseChips = response;
+
+                    $('#create-schedules-button').on('click', function() {
+                        let courses = courseChips.getSelected();
+                        if(courses.length === 0) {
+                            $('#course-chips').html("You must add at least one course to create a schedule.");
+                        } else {
+                            $.when(
+                                postClassTimes(
+                                    {
+                                        courses: courses
+                                    }
+                                )
+                            ).then(function(response) {
+                                sessionStorage.setItem('schedules', JSON.stringify(response));
+                                sessionStorage.setItem('schedulesFilteredByDay', JSON.stringify(response));
+                                sessionStorage.setItem('schedulesFilteredByTime', JSON.stringify(response));
+
+                                //Reset filters
+                                $(".dropdown-menu a").removeClass("active");
+                                $(".list-group li").removeClass("active");
+                                $('#startDropdownBtn').text("Starts After");
+                                $('#endDropdownBtn').text("Ends Before");
+
+                                addSchedules(response);
+                                
+                                Schedule.setSchedule('#schedule-div', response[0]);
+
+                                $('#schedule-div').show();
+                                $('#select-classes-button').show();
+                                $('#filter-options').show();
+                                $('#form-div').hide();
+                            });
+                        }
+                    });
                 });
 
-                $('#create-schedules-button').on('click', function() {
-                    let courses = courseChips.getSelected();
-                    if(courses.length === 0) {
-                        $('#course-chips').html("You must add at least one course to create a schedule.");
-                    } else {
-                        $.when(
-                            postClassTimes(
-                                {
-                                    courses: courses
-                                }
-                            )
-                        ).then(function(response) {
-                            sessionStorage.setItem('schedules', JSON.stringify(response));
-                            sessionStorage.setItem('schedulesFilteredByDay', JSON.stringify(response));
-                            sessionStorage.setItem('schedulesFilteredByTime', JSON.stringify(response));
-
-                            //Reset filters
-                            $(".dropdown-menu a").removeClass("active");
-                            $(".list-group li").removeClass("active");
-                            $('#startDropdownBtn').text("Starts After");
-                            $('#endDropdownBtn').text("Ends Before");
-
-                            addSchedules(response);
-                            
-                            Schedule.setSchedule('#schedule-div', response[0]);
-
-                            $('#schedule-div').show();
-                            $('#select-classes-button').show();
-                            $('#filter-options').show();
-                            $('#form-div').hide();
-                        });
-                    }
-                });
+                
 
                 $('#select-classes-button').on('click', function() {
                     $('#schedule-div').hide();

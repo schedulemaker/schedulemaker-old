@@ -100,10 +100,13 @@ html {
 
 #course-chips {
     background-color: #EEE;
-    height: 64px;
+    min-height: 64px;
+    overflow: auto;
+    height: auto;
     width: 100%;
     border-radius: 10px;
     padding: 10px;
+    
 }
 
 .btn-cherry {
